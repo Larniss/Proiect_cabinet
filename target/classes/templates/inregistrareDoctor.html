@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Doctor Management System</title>
+   <style type="text/css">
+    label {
+        display: inline-block;
+        width: 200px;
+        margin: 5px;
+        text-align: left;
+    }
+    input[type=text], input[type=password], select {
+        display: inline-block;
+        width: 200px;
+    }
+    button {
+        padding: 5px;
+        margin: 10px;
+    }
+</style>
+</head>
+
+<body>
+    <div align="center" class="container">
+        <h1>Profil Doctor</h1>
+        <hr>
+        <h2>Creaza un profil nou</h2>
+
+        <form action="#" th:action="@{/salvareDoctor}" method="post" th:object="${doctor}" >
+        	<label>Nume:</label>
+      	    <input type="text" th:field="*{nume}" /><br/>
+        
+            <label>Prenume:</label>
+            <input type="text" th:field="*{prenume}" /><br/>
+        
+            <label>Telefon:</label>
+            <input type="text" th:field="*{telefon}" /><br/>
+ 
+            <label>E-mail:</label>
+            <input type="text" th:field="*{email}" /><br/>
+ 
+            <label>Password:</label>
+            <input type="password" th:field="*{password}" /><br/>
+
+            <button type="submit" class="btn btn-info col-2"> Salveaza </button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/}"> Inapoi la lista cu doctori</a>
+    </div>
+</body>
+
+</html>

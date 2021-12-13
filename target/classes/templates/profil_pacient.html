@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Profil Pacient</title>
+<style type="text/css">
+    span {
+        display: inline-block;
+        width: 200px;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+<div align="center">
+    <h2>Inregistrare profil pacient realizata cu succes!</h2>
+    <span>Nume:</span><span th:text="${pacient.nume}"></span><br/>
+    <span>Prenume:</span><span th:text="${pacient.prenume}"></span><br/>
+    <span>Telefon:</span><span th:text="${pacient.telefon}"></span><br/>
+    <span>E-mail:</span><span th:text="${pacient.email}"></span><br/>
+    <span>Varsta:</span><span th:text="${pacient.varsta}"></span><br/>
+    <span>Sex:</span><span th:text="${pacient.sex}"></span><br/>
+    <span>Adresa:</span><span th:text="${pacient.adresa}"></span><br/>
+    <span>Observatii:</span><span th:text="${pacient.observatii}"></span><br/>
+</div>
+</body>
+</html>

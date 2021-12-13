@@ -1,17 +1,52 @@
 package Proiect_Stomatologie;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "pacient")
 public class Pacient {
 
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+
+	@Column(name = "nume")
 	private String nume;
+
+	@Column(name = "prenume")
 	private String prenume;
+
+	@Column(name = "telefon")
 	private String telefon;
+
+	@Column(name = "email")
 	private String email;
+
+	@Column(name = "varsta")
 	private int varsta;
+
+	@Column(name = "sex")
 	private char sex;
+
+	@Column(name = "adresa")
 	private String adresa;
+
+	@Column(name = "observatii")
 	private String observatii;
-	
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public String getNume() {
 		return nume;
@@ -76,11 +111,12 @@ public class Pacient {
 	public void setObservatii(String observatii) {
 		this.observatii = observatii;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Pacient [nume=" + nume + ", prenume=" + prenume + ", telefon=" + telefon + ", email=" + email
-				+ ", varsta=" + varsta + ", sex=" + sex + ", adresa=" + adresa + ", observatii=" + observatii + "]";
+		return "Pacient [id=" + id + ", nume=" + nume + ", prenume=" + prenume + ", telefon=" + telefon + ", email="
+				+ email + ", varsta=" + varsta + ", sex=" + sex + ", adresa=" + adresa + ", observatii=" + observatii
+				+ "]";
 	}
 
 }

@@ -17,21 +17,24 @@ input[type=text], input[type=password], select {
 	width: 200px;
 }
 
+input[type=radio] {
+	margin-left: 45px;
+}
+
 button {
 	padding: 5px;
 	margin: 10px;
 }
 </style>
 </head>
-
 <body>
 	<div align="center" class="container">
-		<h1>Profil Doctor</h1>
+		<h1>Profil Pacient</h1>
 		<hr>
 		<h2>Creaza un profil nou</h2>
 
-		<form action="#" th:action="@{/salvareDoctor}" method="post"
-			th:object="${doctor}">
+		<form action="#" th:action="@{/salvarePacient}" method="post"
+			th:object="${pacient}">
 			<label>Nume:</label> <input type="text" th:field="*{nume}" /><br />
 
 			<label>Prenume:</label> <input type="text" th:field="*{prenume}" /><br />
@@ -40,16 +43,19 @@ button {
 
 			<label>E-mail:</label> <input type="text" th:field="*{email}" /><br />
 
-			<label>Password:</label> <input type="password"
-				th:field="*{password}" /><br />
+			<label>Varsta:</label> <input type="text" th:field="*{varsta}" /><br />
 
-			<button type="submit" class="btn btn-info col-2">Salveaza</button>
+			<label>Sex:</label> <input type="radio" th:field="*{sex}" value="M" />M
+			<input type="radio" th:field="*{sex}" value="F" />F<br /> <label>Adresa:</label>
+			<input type="text" th:field="*{adresa}" /><br /> <label>Observatii:</label>
+			<textarea rows="5" cols="25" th:field="*{observatii}"></textarea>
+			<br />
+
+			<button type="submit">Salveaza</button>
 		</form>
-
 		<hr>
 
-		<a th:href="@{/listadoctori}"> Inapoi la lista cu doctori</a>
+		<a th:href="@{/listapacienti}"> Inapoi la lista cu pacienti</a>
 	</div>
 </body>
-
 </html>

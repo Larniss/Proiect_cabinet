@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Cabinet Management System</title>
+<style type="text/css">
+label {
+	display: inline-block;
+	width: 200px;
+	margin: 5px;
+	text-align: left;
+}
+
+input[type=text], input[type=password], select {
+	display: inline-block;
+	width: 200px;
+}
+
+input[type=radio] {
+	margin-left: 45px;
+}
+
+button {
+	padding: 5px;
+	margin: 10px;
+}
+</style>
+</head>
+<body>
+	<div align="center" class="container">
+		<h1>Profil Fisa Pacient</h1>
+		<hr>
+		<h2>Modifica fisa pacientului</h2>
+
+		<form action="#" th:action="@{/salvareFisaPacient}" method="post"
+			th:object="${fisapacient}">
+			
+			<label>Data nasterii (zz/ll/aaaa):</label><input type="date" th:field="*{dataNasterii}" /><br /> 
+			
+			<label>Profesie:</label> <input type="text" th:field="*{profesie}" /><br /> 
+			
+			<label>Antecedente Heredo-Colaterale:</label>
+			<textarea th:field="*{antecedenteHeredo_Colaterale}"> </textarea> <br />
+			
+			<label>Antecedente Personale:</label>
+			<textarea th:field="*{antecedentePersoanale}"> </textarea><br /> 
+			
+			<label>Alergii:</label> 
+			<textarea th:field="*{alergii}"> </textarea> <br /> 
+				
+			<label>Tratamente urmate:</label> 
+			<textarea th:field="*{tratamenteUrmate}"> </textarea> <br /> 
+				
+			<label>Examen Dento-Parodontal:</label>
+			<textarea th:field="*{examenDento_Parodontal}"> </textarea><br /> 
+				
+			<label>Examenul mucoasei bucale:</label>
+			<textarea th:field="*{examenMucoasaBucala}"> </textarea> <br /> 
+			
+			<label>Diagnostic:</label>
+			<textarea th:field="*{diagnostic}"> </textarea><br /> 
+			
+			<label>Plan de tratament:</label>
+			<textarea th:field="*{planTratament}"></textarea><br />
+
+			<button type="submit">Modifica</button>
+		</form>
+		<hr>
+
+		<a th:href="@{/listapacienti}"> Inapoi la lista cu pacienti</a>
+	</div>
+</body>
+</html>

@@ -45,9 +45,16 @@
 					<td th:text="${pacient.adresa}"></td>
 					<td th:text="${pacient.observatii}"></td>
 					<td><a th:href="@{/arataprofilpacient/{id}(id=${pacient.id})}"
-						class="btn btn-primary">Modifica</a> <a
-						th:href="@{/stergePacient/{id}(id=${pacient.id})}"
-						class="btn btn-danger">Sterge</a></td>
+						class="btn btn-primary">Modifica</a> 
+					    <a th:href="@{/stergePacient/{id}(id=${pacient.id})}"
+						class="btn btn-danger">Sterge</a>
+						<a th:href="@{/inregistrarefisapacient}"
+						class="btn btn-primary">Fisa Pacient </a> 
+						<a th:href="@{/arataprofilfisapacient/{id}(id=${pacient.id})}"
+						class="btn btn-primary">Modifica Fisa</a> 
+						<a th:href="@{/stergeFisaPacient/{id}(id=${pacient.id})}"
+						class="btn btn-danger">Sterge Fisa</a>
+						</td>
 
 				</tr>
 			</tbody>

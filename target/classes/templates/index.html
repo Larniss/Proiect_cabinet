@@ -1,29 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="ISO-8859-1">
-<title>Cabinet Management System</title>
-<style type="text/css">
-span {
-	display: inline-block;
-	width: 200px;
-	text-align: left;
-}
+<html lang="eng">
+
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		background: darkslategray;
+		background-size: cover;
+	}
+	nav{
+		width: 100%;
+		height: 60px;
+		background-color: cadetblue;
+	}
+
+	nav ul {
+		float: left;
+	}
+
+	nav ul li {
+		float: left;
+		list-style: none;
+		position: relative;
+	}
+
+	nav ul li a {
+		display: block;
+		font-family: arial;
+		color: #222;
+		font-size: 25px;
+		padding: 22px 14px;
+		text-decoration: none;
+	}
+
 </style>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
 
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cabinet Management System</title>
 </head>
+
 <body>
-	<div align="center">
-		<h1>Lista Doctori</h1>
-		<a href="/listadoctori">Apasa aici pentru inregistrare</a>
-
-
-		<h1>Lista Pacienti</h1>
-		<a href="/listapacienti">Apasa aici pentru inregistrare</a>
-	</div>
+<header>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/listadoctori">Profil doctor</a></li>
+			<li><a href="/listapacienti">Profil pacient</a></li>
+			<li><a href="/listacabinete">Cabinet</a></li>
+			<li><a href="/programari">Programari</a></li>
+		</ul>
+	</nav>
+</header>
 </body>
+
 </html>

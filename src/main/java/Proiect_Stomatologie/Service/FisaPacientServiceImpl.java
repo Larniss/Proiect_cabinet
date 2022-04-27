@@ -3,6 +3,7 @@ package Proiect_Stomatologie.Service;
 import java.util.List;
 import java.util.Optional;
 
+import Proiect_Stomatologie.Class.Pacient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class FisaPacientServiceImpl implements FisaPacientService {
 		@Autowired
 		private FisaPacientRepository fisapacientRepository;
 
-		@Override
+	@Override
 		public List<FisaPacient> getAllFisaPacient() {
 			return fisapacientRepository.findAll();
 		}
@@ -28,7 +29,7 @@ public class FisaPacientServiceImpl implements FisaPacientService {
 		@Override
 		public FisaPacient getFisaPacientById(long id) {
 			Optional<FisaPacient> optional = fisapacientRepository.findById(id);
-			FisaPacient fisapacient = null;
+			FisaPacient fisapacient;
 			if (optional.isPresent()) {
 				fisapacient = optional.get();
 			} else {

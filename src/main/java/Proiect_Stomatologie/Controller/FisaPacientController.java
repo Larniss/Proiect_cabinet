@@ -3,6 +3,7 @@ package Proiect_Stomatologie.Controller;
 
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,12 +16,14 @@ import Proiect_Stomatologie.Class.FisaPacient;
 import Proiect_Stomatologie.Service.FisaPacientService;
 
 
+
 @Controller
 public class FisaPacientController {
 
 	@Autowired
 	private FisaPacientService fisapacientService;
-	
+
+
 
     // afiseaza lista fise pacienti
 	@GetMapping("/fisapacienti")
@@ -33,9 +36,10 @@ public class FisaPacientController {
 	@GetMapping("/inregistrarefisapacient")
 	public String showNewFisaPacientForm(Model model) {
 		// creaza form pentru o fisa noua de pacient
+
 		FisaPacient fisapacient = new FisaPacient();
 		model.addAttribute("fisapacient", fisapacient);
-		
+
 		return "inregistrareFisaPacient";
 	}
 
@@ -43,7 +47,9 @@ public class FisaPacientController {
 	public String saveFisaPacient(@ModelAttribute("fisapacient") FisaPacient fisapacient) {
 		// salveaza fisa la database
 		fisapacientService.saveFisaPacient(fisapacient);
+
 		return "redirect:/listapacienti";
+
 	}
 	
 	@GetMapping("/arataprofilfisapacient/{id}")

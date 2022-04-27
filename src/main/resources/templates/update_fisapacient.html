@@ -35,7 +35,9 @@ button {
 
 		<form action="#" th:action="@{/salvareFisaPacient}" method="post"
 			th:object="${fisapacient}">
-			
+
+			<label>ID:</label> <input type="text" th:field="*{id}" /><br />
+
 			<label>Data nasterii (zz/ll/aaaa):</label><input type="date" th:field="*{dataNasterii}" /><br /> 
 			
 			<label>Profesie:</label> <input type="text" th:field="*{profesie}" /><br /> 
